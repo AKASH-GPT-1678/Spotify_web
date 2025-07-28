@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+
+table{
+  border: 2px solid forestgreen;
+  width: 600px;
+  height: 200px;
+}
+:root {
+  --color1: #FF5733;  /* Red */
+  --color2: #33FF57;  /* Green */
+  --color3: #3357FF;  /* Blue */
+  --color4: #F4D03F;  /* Yellow */
+  --color5: #9B59B6;  /* Purple */
+  --color6: #E67E22;  /* Orange */
+  --color7: #1ABC9C;  /* Teal */
+  --color8: #34495E;  /* Gray */
+  --color9: #F39C12;  /* Gold */
+  --color10: #D35400; /* Dark Orange */
+}
+
+
+#footer {
+  margin-top: 50px;
+  margin-left: 20px;
+}
