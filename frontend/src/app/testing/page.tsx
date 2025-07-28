@@ -38,6 +38,8 @@ const page = () => {
         Hello
         <button onClick={() => dispatch(fullwidth())}>Toggle Width</button>
       </div>
+
+
       <div className={`${value ? 'w-[95%] ml-auto' : 'w-[80%] ml-auto'}`}>
         <Fheader />
         <DHeader />
