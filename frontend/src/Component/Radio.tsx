@@ -1,5 +1,5 @@
 'use client';
-import React, { SetStateAction, useEffect, useRef, useState } from 'react'
+import React, { SetStateAction, use, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Rocky from '../../public/honey.png'
 import { useQuery } from '@tanstack/react-query';
@@ -130,6 +130,7 @@ export const Morerad = () => {
 
     }
     const { fulll, checkfull } = useFullContext();
+    const router = useRouter();
 
 
 
@@ -188,7 +189,7 @@ export const Morerad = () => {
             {/* <div className='text-white'>{JSON.stringify(data)}</div> */}
             <div className='bg-black h-fit'>
                 <h1 className='text-white font-bold text-2xl ml-2.5 '>India's Best</h1>
-                <h1 className='text-zinc-500 font-bold  float-right mr-3 cursor-pointer hover:underline' id='' onClick={() => window.location.href = "http://localhost:3000/callback"}>Show all</h1>
+                <h1 className='text-zinc-500 font-bold  float-right mr-3 cursor-pointer hover:underline' id='' onClick={() =>router.push('/destine?section=India%27s+Best') }>Show all</h1>
             </div>
             <div className='grid grid-cols-8 gap-1 cursor-pointer   bg-black w-full '>
 

@@ -32,15 +32,17 @@ const page = () => {
   const [fullshow, setfullshow] = useState(false);
   return (
 
-    <div className='w-full flex flex-row'>
-
+    <div className='w-full '>
+      {/* 
       <div className={`${value ? 'w-[5%]' : 'w-[20%]'}`}>
         Hello
         <button onClick={() => dispatch(fullwidth())}>Toggle Width</button>
-      </div>
+
+        <Sideview />
+      </div> */}
 
 
-      <div className={`${value ? 'w-[95%] ml-auto' : 'w-[80%] ml-auto'}`}>
+      <div className={''}>
         <Fheader />
         <DHeader />
         <Radio length={8} />
@@ -48,11 +50,11 @@ const page = () => {
         <Mixes2 />
         <Chill />
         <Morerad />
-         <Popular/>
+        <Popular />
         <Today />
-        <SadSongs/>
+        <SadSongs />
         <Banner />
-        
+
 
         <Footer />
 

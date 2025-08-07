@@ -91,13 +91,13 @@ export class SongsService {
 
     async getsongimg(section: string) {
         const songs = await this.Playlist.find({
-            select: ['image_url', 'subtitle' , 'name'],
+            select: ['image_url', 'subtitle', 'name'],
             where: {
                 section: ILike(section)
-                
+
 
             },
-            take : 8
+            take: 8
 
 
         });
@@ -106,12 +106,14 @@ export class SongsService {
     }
 
 
-    async getallsongs(section : string){
+    async getallsongs(section: string) {
         const songs = await this.Playlist.find({
-            where : {
-                section : ILike(section)
+            where: {
+                section: ILike(section)
             }
         });
+        
+        console.log(songs);
 
         return songs;
 

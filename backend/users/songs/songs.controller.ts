@@ -46,13 +46,14 @@ export class SongsController {
 
 
     @Get('image')
-    async getimages(@Query('section') section: string){
+    async getimages(@Query('section') section: string) {
         return this.Songs.getsongimg(section);
     }
 
 
     @Get('allsongs')
-    async getallsong(@Query('section') section : string){
+    async getallsong(@Query('section') section: string) {
+        console.log(section)
         return this.Songs.getallsongs(section)
     }
 }

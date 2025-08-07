@@ -5,10 +5,10 @@ import { FaFacebook } from "react-icons/fa";
 import { useFullContext } from './context';
 
 export const Footer = () => {
-    const {fulll , checkfull} = useFullContext();
+    const { fulll, checkfull } = useFullContext();
 
     return (
-        <div className={` h-[380px] bg-black ${fulll ? "w-full ml-auto" : "w-[1800px]" }`}>
+        <div className={` h-[380px] bg-black w-full`}>
             <div className='grid grid-cols-6 justify-evenly w-full border-2 border-black bg-black '>
                 <div id='footer' className='text-white cursor-pointer'>
                     <h1 className='grid grid-rows-1 font-bold'>Company</h1>

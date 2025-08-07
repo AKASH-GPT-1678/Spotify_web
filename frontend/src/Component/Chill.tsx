@@ -48,7 +48,7 @@ const Chill = () => {
         <div className="bg-black">
             <div className="flex flex-row justify-between text-2xl font-bold text-white p-5">
                 <h1>Chill</h1>
-                <p className="cursor-pointer bg-zinc-600">Show all</p>
+                <p className="cursor-pointer"  onClick={()=> router.push("/destine?section=Chill")}>Show all</p>
             </div>
 
             <div className="grid grid-cols-8 gap-1 overflow-hidden bg-black ">

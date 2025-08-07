@@ -34,20 +34,20 @@ const page = () => {
 
     return (
 
-        <div className='flex flex-row gap-0 overflow-auto min-h-screen'>
+        <div className='flex flex-row gap-0 overflow-auto min-h-screen bg-black'>
             <div className='absolute w-full'><Fheader /></div>
 
-            <div className={`${fulll ? "w-1/5" : "w-1/12"} mt-28 overflow-auto min-h-screen`}>
+            {/* <div className={`${fulll ? "w-1/5" : "w-1/12"} mt-28 overflow-auto min-h-screen`}>
 
                 <Button onClick={() => checkfull(!fulll)}>Meri Jaan</Button>
                 {fulll && <Leftbar />}
-            </div>
+            </div> */}
 
 
             <div className={`${fulll ? "w-4/5" : "w-full"} overflow-y-auto overflow-scroll min-h-screen mt-20`}>
 
 
-                <Button onClick={() => checkfull(!fulll)} className='text-white'>Change</Button>
+
 
                 <div className="bg-black h-fit flex justify-between items-center px-4 py-2">
                     <h1 className="text-white font-bold text-2xl">India's Best</h1>

@@ -41,9 +41,9 @@ const Biggest = () => {
         staleTime: 1000 * 300,
     });
 
-    const Showall =() => {
+    const Showall = () => {
         let section = "Today Biggest hits"
-        let name = new URLSearchParams({section})
+        let name = new URLSearchParams({ section })
         router.push(`destine?${name.toString()}`)
     }
 

@@ -47,29 +47,29 @@ const Today = () => {
     if (error) return <p className="text-white">{error.message}</p>;
 
     return (
-        <div className="bg-black">
-            {/* <div className="text-white">{JSON.stringify(data)}</div> */}
-            <div className="text-2xl font-bold text-white p-5">
-                More of What you like
-            </div>
-
-            <div className="grid grid-cols-8 gap-1 overflow-hidden bg-black ">
-                {data.map((item: Data, index: number) => (
-                    // if(index > 8) return null;
-            
-                    <div key={index} className="flex flex-col gap-3 cursor-pointer">
-                        <Image
-                            src={item.image_url}
-                            alt="iamges"
-                            width={220}
-                            height={200}
-                            onClick={() => getplaylist(item.name)}
-                        />
-                        <p className="text-white">{item.name}</p>
+                <div className="bg-black">
+                    <div className="flex flex-row justify-between text-2xl font-bold text-white p-5">
+                        <h1>More of What you like</h1>
+                        <p className="cursor-pointer"  onClick={()=> router.push("/destine?section=More Like")}>Show all</p>
                     </div>
-))}
-            </div>
-        </div>
+        
+                    <div className="grid grid-cols-8 gap-1 overflow-hidden bg-black ">
+                        {data.map((item: Data, index: number) => (
+                    
+                            <div key={index} className="flex flex-col gap-3 cursor-pointer">
+                                <Image
+                                    src={item.image_url}
+                                    alt="iamges"
+                                    width={220}
+                                    height={200}
+                                    onClick={() => getplaylist(item.name)}
+                                />
+                                <p className="text-white">{item.name}</p>
+                            </div>
+        ))}
+                    </div>
+                </div>
+
     );
 };
 

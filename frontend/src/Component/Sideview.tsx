@@ -1,6 +1,11 @@
 "use client";
 import React, { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button";
+import { LiaFolderOpenSolid } from "react-icons/lia";
+import { CiCirclePlus } from "react-icons/ci";
+import { FaMusic } from "react-icons/fa";
+import Image from "next/image";
+import AlbumItem from "../app/asset/image.png";
 
 export const Sideview = () => {
     const iframeref = useRef<HTMLIFrameElement>(null)
@@ -33,14 +38,24 @@ export const Sideview = () => {
 
     return (
         <div>
-            <div className="w-[20%] h-screen border-2 border-black">
-                <div className="border-3 border-black">
-                    <iframe src="https://storage.googleapis.com/smart_city_123/Nora.mp4" ref={iframeref} height="600" width="full" allow="autoplay" title="Iframe Example" className="mt-0 w-full ]"></iframe>
-                    <Button onClick={Handlepause}>Pause</Button>
-
+            <div className="flex flex-col gap-4 p-8 bg-black h-full">
+                <div className="p-2 bg-gray-400 max-w-[100px]">
+                    <LiaFolderOpenSolid size={30} className="" fill="white" />
+                </div>
+                <div className="p-2 bg-gray-400 max-w-[50px]">
+                    <CiCirclePlus size={30} className="" fill="white" />
+                </div>
+                <div className="p-2 bg-gray-400 max-w-[50px]">
+                    <FaMusic size={30} className="" fill="white" />
+                </div>
+                <div className=" bg-gray-400 max-w-[50px]">
+                  <Image src={AlbumItem.src} alt="logo" width={30} height={30} className="w-full h-full" />
                 </div>
 
+
+
             </div>
+
         </div>
     )
 }
