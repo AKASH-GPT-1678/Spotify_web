@@ -4,7 +4,7 @@ import { Footer } from '@/Component/Footer'
 
 import { useFullContext } from '@/Component/context'
 import Image from 'next/image'
-const page = () => {
+const ShowToday = () => {
     const { fulll, checkfull } = useFullContext();
     const headingref = React.useRef<HTMLHeadingElement>(null);
     const Mixesdata = [
@@ -33,7 +33,7 @@ return (
         <div className={`bg-black cursor-pointer ${fulll ? "w-full ml-auto" : "w-full"}`}>
            
             <div className="bg-black h-fit flex justify-between items-center px-4 py-2">
-                <h1 className="text-white font-bold text-2xl">India's Best</h1>
+                <h1 className="text-white font-bold text-2xl">India&apos;s Best</h1>
                 <h1 className="text-zinc-500 font-bold cursor-pointer hover:underline" ref={headingref}>
                     Show all
                 </h1>
@@ -64,10 +64,10 @@ return (
                 ))}
             </div>
 
-            {/* Footer */}
+        
             <Footer />
         </div>
     );
 };
 
-export default page
+export default ShowToday

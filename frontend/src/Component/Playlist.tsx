@@ -1,8 +1,5 @@
 import React from 'react';
-// import React from 'react'
-
 import { CiClock2 } from "react-icons/ci";
-import ReactAudioPlayer from 'react-audio-player';
 import { Data } from "./data.";
 export const Playlist = () => {
 
@@ -45,5 +42,5 @@ export const Playlist = () => {
     )
 }
 
-// export default Playlist
+
 

@@ -1,11 +1,9 @@
 "use client";
 import React from 'react'
-import Image from 'next/image';
 import { Leftbar1 } from '@/Component/Left';
-import { Leftbar2 } from '@/Component/Left';
 
 
-const page = () => {
+const Opera = () => {
   return (
     <div>
         <h1>Hello Opera</h1>
@@ -15,4 +13,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Opera;

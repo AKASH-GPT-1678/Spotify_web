@@ -5,7 +5,6 @@ import { FaFacebook } from "react-icons/fa";
 import { useFullContext } from './context';
 
 export const Footer = () => {
-    const { fulll, checkfull } = useFullContext();
 
     return (
         <div className={` h-[380px] bg-black w-full`}>

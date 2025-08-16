@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useRef } from "react"
-import { Button } from "@/components/ui/button";
 import { LiaFolderOpenSolid } from "react-icons/lia";
 import { CiCirclePlus } from "react-icons/ci";
 import { FaMusic } from "react-icons/fa";
@@ -8,18 +7,8 @@ import Image from "next/image";
 import AlbumItem from "../app/asset/image.png";
 
 export const Sideview = () => {
-    const iframeref = useRef<HTMLIFrameElement>(null)
-    const [play, setplat] = React.useState(true)
+    const iframeref = useRef<HTMLIFrameElement>(null);
 
-
-
-    const Handlepause = () => {
-        setplat(!play)
-
-        if (play == false) {
-            iframeref.current?.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*')
-        };
-    }
 
     useEffect(() => {
 
@@ -32,7 +21,7 @@ export const Sideview = () => {
 
 
         }
-        const interval = setInterval(reload, 10000); // Adjust this time
+        setInterval(reload, 10000); // Adjust this time
 
     }, [])
 

@@ -2,8 +2,6 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
-import { useRef } from "react";
-
 import React from "react";
 
 const Chill = () => {
@@ -13,11 +11,11 @@ const Chill = () => {
         name: string;
     }
 
-    const h1ref = useRef<HTMLHeadingElement>(null);
+
     const router = useRouter();
 
     const getimages = async () => {
-        let name = "Chill";
+        const name = "Chill";
         const images = await fetch(`http://localhost:3500/songs/image?section=${name}`, {
             method: 'GET',
         });
@@ -46,24 +44,25 @@ const Chill = () => {
 
     return (
         <div className="bg-black">
-            <div className="flex flex-row justify-between text-2xl font-bold text-white p-5">
-                <h1>Chill</h1>
-                <p className="cursor-pointer"  onClick={()=> router.push("/destine?section=Chill")}>Show all</p>
+            <div className="flex flex-row justify-between  font-bold text-white p-5">
+                <h1 className="text-2xl">Chill</h1>
+                <p className="cursor-pointer text-lg"  onClick={()=> router.push("/destine?section=Chill")}>Show all</p>
             </div>
 
             <div className="grid grid-cols-8 gap-1 overflow-hidden bg-black ">
                 {data.map((item: Data, index: number) => (
             
-                    <div key={index} className="flex flex-col gap-3 cursor-pointer">
-                        <Image
-                            src={item.image_url}
-                            alt="iamges"
-                            width={220}
-                            height={200}
-                            onClick={() => getplaylist(item.name)}
-                        />
-                        <p className="text-white">{item.name}</p>
-                    </div>
+                                   <div key={index} className="flex flex-col gap-3 cursor-pointer">
+                                       <Image
+                                           src={item.image_url}
+                                           alt="iamges"
+                                           width={150}
+                                           height={150}
+                                           onClick={() => getplaylist(item.name)}
+                                           className="w-[200px] h-[200px] object-cover"
+                                       />
+                                       <p className="text-white">{item.name}</p>
+                                   </div>
 ))}
             </div>
         </div>

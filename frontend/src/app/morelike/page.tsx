@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button';
 import { Fheader } from '@/Component/fheader';
 import { Leftbar } from '@/Component/Leftbar';
-const page = () => {
+const MoreLiking = () => {
     const { fulll, checkfull } = useFullContext();
     const headingref = React.useRef<HTMLHeadingElement>(null);
     const Mixesdata = [
@@ -50,7 +50,7 @@ const page = () => {
                 <Button onClick={() => checkfull(!fulll)} className='text-white'>Change</Button>
 
                 <div className="bg-black h-fit flex justify-between items-center px-4 py-2">
-                    <h1 className="text-white font-bold text-2xl">India's Best</h1>
+                    <h1 className="text-white font-bold text-2xl">India&apos;s Best</h1>
                     <h1 className="text-zinc-500 font-bold cursor-pointer hover:underline" ref={headingref}>
                         Show all
                     </h1>
@@ -91,4 +91,4 @@ const page = () => {
     )
 }
 
-export default page
+export default MoreLiking;

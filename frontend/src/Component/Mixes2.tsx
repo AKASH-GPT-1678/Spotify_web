@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { useRef } from "react";
-
 import React from "react";
 
 const Chill = () => {
@@ -46,9 +45,9 @@ const Chill = () => {
 
     return (
         <div className="bg-black">
-            <div className="flex flex-row justify-between text-2xl font-bold text-white p-5">
-                <h1>Top Mixes</h1>
-                <p className="cursor-pointer " onClick={()=> router.push("/destine?section=Top Mixes")}>Show all</p>
+            <div className="flex flex-row justify-between  font-bold text-white p-5">
+                <h1 className="text-2xl">Top Mixes</h1>
+                <p className="cursor-pointer text-lg" onClick={() => router.push("/destine?section=More Like")}>Show all</p>
             </div>
 
             <div className="grid grid-cols-8 gap-1 overflow-hidden bg-black ">
@@ -58,9 +57,10 @@ const Chill = () => {
                         <Image
                             src={item.image_url}
                             alt="iamges"
-                            width={220}
-                            height={200}
+                            width={150}
+                            height={150}
                             onClick={() => getplaylist(item.name)}
+                            className="w-[200px] h-[200px] object-cover"
                         />
                         <p className="text-white">{item.name}</p>
                     </div>

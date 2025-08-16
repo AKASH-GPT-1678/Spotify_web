@@ -49,6 +49,7 @@ export const Banner = () => {
             {[...data].map((dat, i) => (
                 <Middle key={i} Image1={dat.publicurl} Image2={"https://storage.googleapis.com/smart_city_123/Banner/fanaa.jpg"} Heading={dat.name} Type={dat.type} Singer={dat.singer} />
             ))}
+            <button className='hidden' onClick={() => checkfull(true)}></button>
 
         </div>
     );

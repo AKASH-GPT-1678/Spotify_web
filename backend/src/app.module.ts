@@ -14,18 +14,28 @@ import { CloudModule } from './cloud/cloud.module';
 
 
 @Module({
-  imports: [TypeOrmModule.forRoot({
-    type: 'postgres',
-    host: 'localhost',
-    port: 5432,
-    username: 'postgres',
-    password: 'guptapc123',
-    database: 'Pharma',
-    entities: [User, Recentplay, Song, BannerSong, Tracks , Playlist],
-    synchronize: true
-
-  }), UsersModule, SongsModule, SeedModule, CloudModule],
+  imports: [
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'd2aiooruibrs73ag9ij0-a.oregon-postgres.render.com',
+      port: 5432,
+      username: 'akash',
+      password: 'JTw6EW0mMKFUlI3cLdA03pabMHCH5RN3',
+      database: 'spotify_83os',
+      entities: [User, Recentplay, Song, BannerSong, Tracks, Playlist],
+      synchronize: true,
+      ssl: {
+        rejectUnauthorized: false, // Required for Render managed Postgres
+      },
+    }),
+    UsersModule,
+    SongsModule,
+    SeedModule,
+    CloudModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
+
+
 export class AppModule { }

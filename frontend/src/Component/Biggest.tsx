@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
-import { useRef } from "react";
+
 
 import React from "react";
 
@@ -13,11 +13,11 @@ const Biggest = () => {
         name: string;
     }
 
-    const h1ref = useRef<HTMLHeadingElement>(null);
+
     const router = useRouter();
 
     const getimages = async () => {
-        let name = "Today Biggest hits";
+        const name = "Today Biggest hits";
         const images = await fetch(`http://localhost:3500/songs/image?section=${name}`, {
             method: 'GET',
         });
@@ -53,7 +53,7 @@ const Biggest = () => {
     return (
         <div className="bg-black">
             <div className=" font-bold flex flex-row justify-between text-white p-5">
-                <h1 className="text-2xl">Today's Biggest hits</h1>
+                <h1 className="text-2xl">Today&apos;s Biggest hits</h1>
                 <p onClick={Showall} className="text-zinc-400"> Show All</p>
             </div>
 
@@ -64,9 +64,10 @@ const Biggest = () => {
                         <Image
                             src={item.image_url}
                             alt="iamges"
-                            width={220}
-                            height={200}
+                            width={150}
+                            height={150}
                             onClick={() => getplaylist(item.name)}
+                            className="w-[200px] h-[200px] object-cover"
                         />
                         <p className="text-white">{item.name}</p>
                     </div>

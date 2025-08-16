@@ -2,18 +2,16 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
-import { useRef } from "react";
-
 import React from "react";
 
-const SadSongs= () => {
+const SadSongs = () => {
     interface Data {
         subtitle: string;
         image_url: string;
         name: string;
     }
 
-    const h1ref = useRef<HTMLHeadingElement>(null);
+
     const router = useRouter();
 
     const getimages = async () => {
@@ -57,9 +55,10 @@ const SadSongs= () => {
                         <Image
                             src={item.image_url}
                             alt="iamges"
-                            width={220}
-                            height={200}
+                            width={150}
+                            height={150}
                             onClick={() => getplaylist(item.name)}
+                            className="w-[200px] h-[200px] object-cover"
                         />
                         <p className="text-white">{item.name}</p>
                     </div>

@@ -1,13 +1,11 @@
 "use client";
-import React, { useEffect } from 'react'
-import { useQuery } from '@tanstack/react-query'
+import React from 'react'
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import axios from 'axios';
 import { useFullContext } from '@/Component/context';
 import { Footer } from '@/Component/Footer';
-import { Header } from '@/Component/Header';
-import { DHeader, Fheader } from '@/Component/fheader';
+import { Fheader } from '@/Component/fheader';
 interface Item {
     id: number;                 // auto-generated identity
     name: string;               // max length: 200
@@ -18,7 +16,7 @@ interface Item {
 };
 
 
-const page = () => {
+const Destine = () => {
     const [data, setData] = React.useState<Item[]>([]);
     const { fulll, checkfull } = useFullContext();
 
@@ -31,6 +29,7 @@ const page = () => {
         const response = await axios.get(`http://localhost:3500/songs/allsongs?section=${title}`, {
             method: 'GET',
         })
+        checkfull(true);
 
         const data = response.data;
         setData(data);
@@ -48,16 +47,16 @@ const page = () => {
 
     return (
         <div>
-         
+
             <div className={`${fulll ? "w-4/5" : "w-full"} overflow-y-auto overflow-scroll min-h-screen bg-black`}>
-            <Fheader/>
-           
+                <Fheader />
+
 
 
 
 
                 <div className="bg-black h-fit flex justify-between items-center px-4 py-2">
-                    <h1 className="text-white font-bold text-2xl">India's Best</h1>
+                    <h1 className="text-white font-bold text-2xl">India&#39;s Best</h1>
                     <h1 className="text-zinc-500 font-bold cursor-pointer hover:underline">
                         Show all
                     </h1>
@@ -69,7 +68,7 @@ const page = () => {
                             key={index}
                             className="flex flex-col w-[180px] h-[230px] border-2 border-white p-1 hover:border-zinc-500 border-opacity-50 rounded-lg"
                         >
-                            {/* Image */}
+
                             <div className="h-4/5 w-full">
                                 <Image
                                     src={mix.image_url}
@@ -80,7 +79,7 @@ const page = () => {
                                 />
                             </div>
 
-                            {/* Text */}
+
                             <p className="h-1/5 text-white text-center text-sm mt-2">
                                 Mai Raat Bhar yeh dua karu
                             </p>
@@ -88,7 +87,7 @@ const page = () => {
                     ))}
                 </div>
 
-                {/* Footer */}
+
                 <Footer />
             </div>
 
@@ -98,4 +97,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Destine;

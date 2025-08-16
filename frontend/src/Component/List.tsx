@@ -1,18 +1,17 @@
 "use client";
-import React, { use, useState } from 'react'
+import React, {  useState } from 'react'
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { useRef } from 'react';
 import { useEffect } from 'react';
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import Image from 'next/image';
 import Veera from "../../public/veere.png"
-import { Button } from '@/components/ui/button';
 import { useFullContext } from './context';
 export const List = () => {
 
     const contain = useRef<HTMLDivElement>(null);
     const [Dekh, Setdekh] = useState(false)
-    const container = contain.current
+    // const container = contain.current
     const h1ref = useRef<HTMLHeadingElement>(null)
     const throww = () => {
         if (h1ref.current) {
@@ -63,7 +62,7 @@ export const List = () => {
                 ))}
                 {Dekh && <FaArrowAltCircleLeft size={50} className=' absolute ml-auto mt-16 ' id='Left' />}
                 <FaArrowAltCircleRight size={50} className="absolute right-[500px] mt-20  cursor-pointer" id='Sher' />
-                {/* </Button> */}
+            
             </div>
 
         </div>

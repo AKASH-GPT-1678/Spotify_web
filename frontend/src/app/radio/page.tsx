@@ -1,13 +1,10 @@
 "use client";
 import React from 'react'
 import { Footer } from '@/Component/Footer'
-
 import { useFullContext } from '@/Component/context'
 import Image from 'next/image'
-import { Button } from '@/components/ui/button';
 import { Fheader } from '@/Component/fheader';
-import { Leftbar } from '@/Component/Leftbar';
-const page = () => {
+const Radioo = () => {
     const { fulll, checkfull } = useFullContext();
     const headingref = React.useRef<HTMLHeadingElement>(null);
     const Mixesdata = [
@@ -37,11 +34,6 @@ const page = () => {
         <div className='flex flex-row gap-0 overflow-auto min-h-screen bg-black'>
             <div className='absolute w-full'><Fheader /></div>
 
-            {/* <div className={`${fulll ? "w-1/5" : "w-1/12"} mt-28 overflow-auto min-h-screen`}>
-
-                <Button onClick={() => checkfull(!fulll)}>Meri Jaan</Button>
-                {fulll && <Leftbar />}
-            </div> */}
 
 
             <div className={`${fulll ? "w-4/5" : "w-full"} overflow-y-auto overflow-scroll min-h-screen mt-20`}>
@@ -91,4 +83,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Radioo

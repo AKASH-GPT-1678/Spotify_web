@@ -1,11 +1,8 @@
 "use client";
-import { Pi } from 'lucide-react'
 import React, { useEffect } from 'react'
 
 import { HiDownload } from "react-icons/hi";
-import { PiHouseLight } from "react-icons/pi";
 import { Input } from '@/components/ui/input';
-import { CgPlayButtonO } from "react-icons/cg";
 import { useFullContext } from './context';
 import { Button } from '@/components/ui/button';
 import { IoHomeSharp } from "react-icons/io5";

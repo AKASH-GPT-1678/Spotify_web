@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { useRef } from "react";
-import { useFullContext } from "./context";
 import React from "react";
 
 const Today = () => {
@@ -13,8 +12,7 @@ const Today = () => {
         name: string;
     }
 
-    const [show, setshow] = React.useState(false);
-    const { fulll, checkfull } = useFullContext();
+
     const h1ref = useRef<HTMLHeadingElement>(null);
     const router = useRouter();
 
@@ -47,28 +45,29 @@ const Today = () => {
     if (error) return <p className="text-white">{error.message}</p>;
 
     return (
-                <div className="bg-black">
-                    <div className="flex flex-row justify-between text-2xl font-bold text-white p-5">
-                        <h1>More of What you like</h1>
-                        <p className="cursor-pointer"  onClick={()=> router.push("/destine?section=More Like")}>Show all</p>
+        <div className="bg-black">
+            <div className="flex flex-row justify-between  font-bold text-white p-5">
+                <h1 className="text-2xl">More of What you like</h1>
+                <p className="cursor-pointer text-lg" onClick={() => router.push("/destine?section=More Like")}>Show all</p>
+            </div>
+
+            <div className="grid grid-cols-8 gap-1 overflow-hidden bg-black ">
+                {data.map((item: Data, index: number) => (
+
+                    <div key={index} className="flex flex-col gap-3 cursor-pointer">
+                        <Image
+                            src={item.image_url}
+                            alt="iamges"
+                            width={150}
+                            height={150}
+                            onClick={() => getplaylist(item.name)}
+                            className="w-[200px] h-[200px] object-cover"
+                        />
+                        <p className="text-white">{item.name}</p>
                     </div>
-        
-                    <div className="grid grid-cols-8 gap-1 overflow-hidden bg-black ">
-                        {data.map((item: Data, index: number) => (
-                    
-                            <div key={index} className="flex flex-col gap-3 cursor-pointer">
-                                <Image
-                                    src={item.image_url}
-                                    alt="iamges"
-                                    width={220}
-                                    height={200}
-                                    onClick={() => getplaylist(item.name)}
-                                />
-                                <p className="text-white">{item.name}</p>
-                            </div>
-        ))}
-                    </div>
-                </div>
+                ))}
+            </div>
+        </div>
 
     );
 };

@@ -11,7 +11,6 @@ import { useFullContext } from './context';
 import { Button } from '@/components/ui/button';
 
 import { useSearchParams } from 'next/navigation';
-import { useRouter } from 'next/navigation';
 
 interface Artists {
     artist1: string;
@@ -19,7 +18,7 @@ interface Artists {
     artist3: string;
 }
 export const Indisong = () => {
-    const { fulll, checkfull } = useFullContext();
+
     const [Urls, setUrls] = useState<string[]>([]);
     const [Images, setImages] = useState<string[]>([]);
     const [Names, setnames] = useState<string[]>([]);

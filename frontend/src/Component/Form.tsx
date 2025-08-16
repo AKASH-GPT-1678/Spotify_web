@@ -1,10 +1,6 @@
 "use client";
-import { AiOutlineSpotify } from "react-icons/ai";
 import { Button } from "@/components/ui/button";
-import { FaFacebook } from "react-icons/fa6";
-import { FiFacebook } from "react-icons/fi";
 import { Input } from "@/components/ui/input";
-import { SlSocialSpotify } from "react-icons/sl";
 import { SiSocialblade } from "react-icons/si";
 import React from "react";
 export const Formpage = () => {
