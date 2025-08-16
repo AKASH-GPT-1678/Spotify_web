@@ -17,10 +17,11 @@ export const Banner = () => {
     const {fulll , checkfull } = useFullContext();
 
     const [data, setData] = useState<Song[]>([]);
+    const endpoint = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT;
 
     async function fetchall() {
         try {
-            const response = await fetch('http://localhost:3500/songs/banner', {
+            const response = await fetch(`${endpoint}/songs/banner`, {
                 method: 'GET'
             });
 

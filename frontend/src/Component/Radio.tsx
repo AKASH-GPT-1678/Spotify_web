@@ -25,6 +25,7 @@ export const Radio: React.FC<rad> = ({ length }) => {
     //     'bg-orange-300', // for darkOrange
     // ];
     const throwref = useRef<HTMLHeadingElement>(null);
+    const endpoint = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT
 
     const throww = () => {
         if (throwref.current) {
@@ -50,7 +51,7 @@ export const Radio: React.FC<rad> = ({ length }) => {
     const getplaylist = async (namee: string) => {
         try {
           
-            const response = await fetch(`http://localhost:3500/songs/getplaylist?name=${namee}`, {
+            const response = await fetch(`${endpoint}/songs/getplaylist?name=${namee}`, {
                 method: 'GET',
 
             });

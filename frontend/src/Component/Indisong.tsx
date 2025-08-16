@@ -24,9 +24,10 @@ export const Indisong = () => {
     const [Names, setnames] = useState<string[]>([]);
     const [Artist, setartist] = useState<Artists[]>([]);
     const [name, setname] = useState("Kamlesh");
+    const endpoint = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT;
 
 
-    const playname = useRef<HTMLButtonElement>(null);
+
 
     const getSong = async (id: string) => {
         try {
@@ -46,7 +47,7 @@ export const Indisong = () => {
         } catch (error) {
             console.error(error);
         }
-    };
+    // };
     const searchparam = useSearchParams();
 
     const getsongs = async () => {
@@ -57,7 +58,7 @@ export const Indisong = () => {
         console.log(value);
 
         try {
-            const response = await fetch(`http://localhost:3500/songs/playlist?name=${value}`, {
+            const response = await fetch(`${endpoint}/songs/playlist?name=${value}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -188,4 +189,5 @@ export const Indisong = () => {
 
         </div>
     )
+}
 }

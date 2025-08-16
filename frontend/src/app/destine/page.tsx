@@ -22,11 +22,12 @@ const Destine = () => {
 
 
     const search = useSearchParams();
+    const endpoint = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT;
     const getallSongs = async () => {
 
         const title = search.get("section");
 
-        const response = await axios.get(`http://localhost:3500/songs/allsongs?section=${title}`, {
+        const response = await axios.get(`${endpoint}/songs/allsongs?section=${title}`, {
             method: 'GET',
         })
         checkfull(true);

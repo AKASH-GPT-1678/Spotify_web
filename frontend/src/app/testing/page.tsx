@@ -13,10 +13,7 @@ import Chill from '@/Component/Chill';
 
 
 const Testing = () => {
-  // const [number, setnumber] = React.useState(4);
-  // const { fulll, checkfull } = useFullContext();
-  // // const dispatch = useDispatch();
-  // const value = useSelector((state: any) => state.fullstate.isFullwidth);
+
 
 
 

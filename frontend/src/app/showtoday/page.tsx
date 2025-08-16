@@ -29,9 +29,9 @@ const ShowToday = () => {
 
 
 
-return (
+    return (
         <div className={`bg-black cursor-pointer ${fulll ? "w-full ml-auto" : "w-full"}`}>
-           
+
             <div className="bg-black h-fit flex justify-between items-center px-4 py-2">
                 <h1 className="text-white font-bold text-2xl">India&apos;s Best</h1>
                 <h1 className="text-zinc-500 font-bold cursor-pointer hover:underline" ref={headingref}>
@@ -56,7 +56,7 @@ return (
                             />
                         </div>
 
-                    
+
                         <p className="h-1/5 text-white text-center text-sm mt-2">
                             Mai Raat Bhar yeh dua karu
                         </p>
@@ -64,7 +64,7 @@ return (
                 ))}
             </div>
 
-        
+
             <Footer />
         </div>
     );

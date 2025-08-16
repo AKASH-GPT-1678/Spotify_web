@@ -12,7 +12,8 @@ export const List = () => {
     const contain = useRef<HTMLDivElement>(null);
     const [Dekh, Setdekh] = useState(false)
     // const container = contain.current
-    const h1ref = useRef<HTMLHeadingElement>(null)
+    const h1ref = useRef<HTMLHeadingElement>(null);
+    const endpoint = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT;
     const throww = () => {
         if (h1ref.current) {
             h1ref.current.addEventListener('click', () => {

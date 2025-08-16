@@ -1,14 +1,10 @@
 "use client";
 import Image, { StaticImageData } from "next/image"
-import { CirclePlay } from 'lucide-react';
-import { Button } from "@/components/ui/button";
 import { BsThreeDots } from "react-icons/bs";
 import { CiCirclePlus } from "react-icons/ci";
 import { MdPlayCircleOutline } from "react-icons/md";
 import { useRef } from "react";
-import { useFullContext } from "./context";
 import { useState } from "react";
-import { useContext } from "react";
 import { motion } from 'framer-motion';
 interface Props {
     Image1: string;

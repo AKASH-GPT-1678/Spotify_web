@@ -15,10 +15,11 @@ const Biggest = () => {
 
 
     const router = useRouter();
+    const endpoint = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT;
 
     const getimages = async () => {
         const name = "Today Biggest hits";
-        const images = await fetch(`http://localhost:3500/songs/image?section=${name}`, {
+        const images = await fetch(`${endpoint}/songs/image?section=${name}`, {
             method: 'GET',
         });
 
@@ -27,7 +28,7 @@ const Biggest = () => {
     };
 
     async function getplaylist(name: string) {
-        const songs = await fetch(`http://localhost:3500/songs/getplaylist?name=${name}`, {
+        const songs = await fetch(`${endpoint}/songs/getplaylist?name=${name}`, {
             method: 'GET',
         });
         const data = await songs.json();
