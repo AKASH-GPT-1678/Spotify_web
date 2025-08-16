@@ -25,7 +25,7 @@ import { CloudModule } from './cloud/cloud.module';
       entities: [User, Recentplay, Song, BannerSong, Tracks, Playlist],
       synchronize: true,
       ssl: {
-        rejectUnauthorized: false, // Required for Render managed Postgres
+        rejectUnauthorized: false, 
       },
     }),
     UsersModule,
