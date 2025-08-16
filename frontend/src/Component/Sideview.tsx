@@ -21,7 +21,7 @@ export const Sideview = () => {
 
 
         }
-        setInterval(reload, 10000); // Adjust this time
+        setInterval(reload, 10000); 
 
     }, [])
 
