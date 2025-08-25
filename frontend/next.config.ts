@@ -26,6 +26,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "seed-mix-image.spotifycdn.com"
+      },
+      {
+        protocol: "https",
+        hostname: "charts-images.scdn.co"
       }
 
     ],
