@@ -78,38 +78,45 @@ export const Radio: React.FC<rad> = ({ length }) => {
 
 
     return (
-        <div className={`bg-black cursor-pointer  ${fulll ? "w-full ml-auto" : "w-full"}`}>
-            <div className='flex flex-row justify-between'>
-            <h2 className='text-white font-bold text-2xl ml-3 hover:underline '>Popular Radio</h2>
-            <h3 className=' font-bold float-right cursor-pointer mr-3 hover:underline text-white' onClick={() => router.push('/deepradio')}>Show all</h3>
-            </div>
-            <div className='flex flex-row  flex-nowrap gap-2 cursor-pointer mt-3 ml-2 '>
+<div className="bg-black w-full">
+  {/* Header */}
+  <div className="flex flex-row justify-between items-center">
+    <h2 className="text-white font-bold text-2xl ml-3 hover:underline">
+      Popular Radio
+    </h2>
+    <h3
+      className="font-bold cursor-pointer mr-3 hover:underline text-white"
+      onClick={() => router.push("/deepradio")}
+    >
+      Show all
+    </h3>
+  </div>
 
-                {Array.from({ length: 10 }).map((_, index) => (
-                    <div className='h-[270px]  flex-row flex-wrap w-fit' key={index}>
+  {/* Scrollable Cards */}
+  <div className="flex overflow-x-auto scrollbar-hide gap-3 mt-3 ml-2 pr-3">
+    {Array.from({ length: 10 }).map((_, index) => (
+      <div
+        key={index}
+        className="flex-shrink-0 w-[180px] sm:w-[200px] h-[240px]"
+      >
+        <div className="flex flex-col border-2 rounded-xl hover:shadow-lg overflow-hidden w-full h-full">
+          <Image
+            src={Radioimagess[index].value}
+            alt="radio"
+            width={200}
+            height={200}
+            className="object-cover w-full h-[200px] cursor-pointer"
+            onClick={() => getplaylist(Radioimagess[index]?.name)}
+          />
+          <p className="text-white text-center truncate px-2">
+            {Radioimagess[index].name}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
 
-
-
-                        <div className={`flex flex-col   border-2 hover:shadow-lg object-cover w-[200px] h-[220px] `}   >
-                            <Image src={Radioimagess[index].value} alt='images' width={180} height={220} ref={dataname} onClick={() => getplaylist(Radioimagess[index]?.name)} />
-                            <p className='text-white'>{Radioimagess[index].name}</p>
-
-
-                        </div>
-
-
-                    </div>
-
-
-
-                ))}
-            </div>
-
-
-
-
-
-        </div >
     )
 
 
