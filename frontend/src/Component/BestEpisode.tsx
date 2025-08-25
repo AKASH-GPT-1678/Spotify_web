@@ -2,10 +2,9 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
-import { useRef } from "react";
 import React from "react";
 
-const Today = () => {
+const PodcastWeek = () => {
     interface Data {
         subtitle: string;
         image_url: string;
@@ -13,12 +12,11 @@ const Today = () => {
     }
 
 
-    // const h1ref = useRef<HTMLHeadingElement>(null);
     const router = useRouter();
     const endpoint = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT;
 
     const getimages = async () => {
-        let name = encodeURI("More Like");
+        const name = "Podcast";
         const images = await fetch(`${endpoint}/songs/image?section=${name}`, {
             method: 'GET',
         });
@@ -37,28 +35,28 @@ const Today = () => {
     }
 
     const { data, isLoading, error } = useQuery({
-        queryKey: ["like"],
+        queryKey: ["podcast"],
         queryFn: getimages,
         staleTime: 1000 * 300,
     });
 
-    if (isLoading) return <p>Loading</p>;
+    if (isLoading) return <p>Loading ho raha</p>;
     if (error) return <p className="text-white">{error.message}</p>;
 
     return (
         <div className="bg-black">
-            {/* Header */}
+         
             <div className="flex flex-row justify-between font-bold text-white p-5">
-                <h1 className="text-2xl">More of What you like</h1>
+                <h1 className="text-2xl">Podcast this week</h1>
                 <p
                     className="cursor-pointer text-lg"
-                    onClick={() => router.push("/destine?section=More Like")}
+                    onClick={() => router.push("/destine?section=PodcastWeek")}
                 >
                     Show all
                 </p>
             </div>
 
-            {/* Horizontal Scroll Row */}
+
             <div className="flex overflow-x-auto scrollbar-hide gap-4 px-5 pb-5">
                 {data.map((item: Data, index: number) => (
                     <div
@@ -79,8 +77,7 @@ const Today = () => {
             </div>
         </div>
 
-
     );
 };
 
-export default Today;
+export default PodcastWeek;

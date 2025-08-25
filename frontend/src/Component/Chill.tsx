@@ -44,29 +44,39 @@ const Chill = () => {
     if (error) return <p className="text-white">{error.message}</p>;
 
     return (
-        <div className="bg-black">
-            <div className="flex flex-row justify-between  font-bold text-white p-5">
-                <h1 className="text-2xl">Chill</h1>
-                <p className="cursor-pointer text-lg" onClick={() => router.push("/destine?section=Chill")}>Show all</p>
-            </div>
+<div className="bg-black">
+  {/* Header */}
+  <div className="flex flex-row justify-between font-bold text-white p-5">
+    <h1 className="text-2xl">Chill</h1>
+    <p
+      className="cursor-pointer text-lg"
+      onClick={() => router.push("/destine?section=Chill")}
+    >
+      Show all
+    </p>
+  </div>
 
-            <div className="grid grid-cols-8 gap-1 overflow-hidden bg-black ">
-                {data.map((item: Data, index: number) => (
 
-                    <div key={index} className="flex flex-col gap-3 cursor-pointer">
-                        <Image
-                            src={item.image_url}
-                            alt="iamges"
-                            width={150}
-                            height={150}
-                            onClick={() => getplaylist(item.name)}
-                            className="w-[200px] h-[200px] object-cover"
-                        />
-                        <p className="text-white">{item.name}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
+  <div className="flex overflow-x-auto scrollbar-hide gap-4 px-5 pb-5">
+    {data.map((item: Data, index: number) => (
+      <div
+        key={index}
+        className="flex-shrink-0 flex flex-col gap-2 cursor-pointer w-[160px] sm:w-[180px] md:w-[200px]"
+      >
+        <Image
+          src={item.image_url}
+          alt="images"
+          width={200}
+          height={200}
+          onClick={() => getplaylist(item.name)}
+          className="w-full h-[200px] object-cover rounded-lg hover:scale-105 transition-transform"
+        />
+        <p className="text-white text-center truncate">{item.name}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
     );
 };
 

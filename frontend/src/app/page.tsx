@@ -10,6 +10,8 @@ import Today from "@/Component/Morelike";
 import SadSongs from "@/Component/Sad";
 import { Banner } from "@/Component/Banner";
 import Mixes2 from "@/Component/Mixes2";
+import PodcastWeek from "@/Component/BestEpisode";
+
 export default function Home() {
   return (
       <div className='w-full '>
@@ -23,9 +25,10 @@ export default function Home() {
         <Biggest />
         <Mixes2 />
         <Chill />
-        <Morerad />
+       
         <Popular />
-        <Today />
+        <PodcastWeek/>
+ 
         <SadSongs />
         <Banner />
 

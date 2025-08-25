@@ -10,6 +10,7 @@ import Popular from '@/Component/Popular';
 import Mixes2 from '@/Component/Mixes2';
 import SadSongs from '@/Component/Sad';
 import Chill from '@/Component/Chill';
+import PodcastWeek from '@/Component/BestEpisode';
 
 
 const Testing = () => {
@@ -34,6 +35,7 @@ const Testing = () => {
         <Morerad />
         <Popular />
         <Today />
+        <PodcastWeek/>
         <SadSongs />
         <Banner />
 
