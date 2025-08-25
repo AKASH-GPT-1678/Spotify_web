@@ -92,7 +92,7 @@ export const Radio: React.FC<rad> = ({ length }) => {
     </h3>
   </div>
 
-  {/* Scrollable Cards */}
+ 
   <div className="flex overflow-x-auto scrollbar-hide gap-3 mt-3 ml-2 pr-3">
     {Array.from({ length: 10 }).map((_, index) => (
       <div

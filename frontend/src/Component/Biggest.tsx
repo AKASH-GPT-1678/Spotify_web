@@ -53,28 +53,35 @@ const Biggest = () => {
 
     return (
         <div className="bg-black">
-            <div className=" font-bold flex flex-row justify-between text-white p-5">
-                <h1 className="text-2xl">Today&apos;s Biggest hits</h1>
-                <p onClick={Showall} className="text-zinc-400"> Show All</p>
+            {/* Header */}
+            <div className="font-bold flex flex-row justify-between text-white p-5">
+                <h1 className="text-2xl">Today&apos;s Biggest Hits</h1>
+                <p onClick={Showall} className="text-zinc-400 cursor-pointer hover:underline">
+                    Show All
+                </p>
             </div>
 
-            <div className="grid grid-cols-8 gap-1 overflow-hidden bg-black ">
+            {/* Horizontal Scroll Row */}
+            <div className="flex overflow-x-auto scrollbar-hide gap-4 px-5 pb-5">
                 {data.map((item: Data, index: number) => (
-
-                    <div key={index} className="flex flex-col gap-3 cursor-pointer">
+                    <div
+                        key={index}
+                        className="flex-shrink-0 flex flex-col gap-2 cursor-pointer w-[160px] sm:w-[180px] md:w-[200px]"
+                    >
                         <Image
                             src={item.image_url}
-                            alt="iamges"
-                            width={150}
-                            height={150}
+                            alt="images"
+                            width={200}
+                            height={200}
                             onClick={() => getplaylist(item.name)}
-                            className="w-[200px] h-[200px] object-cover"
+                            className="object-cover rounded-lg w-full h-[200px] hover:scale-105 transition-transform"
                         />
-                        <p className="text-white">{item.name}</p>
+                        <p className="text-white text-center truncate">{item.name}</p>
                     </div>
                 ))}
             </div>
         </div>
+
     );
 };
 
