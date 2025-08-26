@@ -41,7 +41,7 @@ export class SongsService {
 
     async bannerall() {
         const data = await this.Banners.find();
-        return { sucess: true, sandesh: "Teri gaand mai karu api call", data };
+        return { sucess: true, sandesh: "sucess", data };
 
     }
 
@@ -112,7 +112,7 @@ export class SongsService {
                 section: ILike(section)
             }
         });
-        
+
         console.log(songs);
 
         return songs;

@@ -23,7 +23,7 @@ export const Fheader = () => {
 
             </div>
             <div className=' w-fit h-[50px] flex flex-row gap-5 items-center '>
-                <Button variant={"secondary"} className='bg-white text-black active:scale-105 cursor-pointer rounded-2xl font-bold py-2'>Explore Premium</Button>
+                <Button variant={"secondary"} className='bg-white text-black active:scale-105 cursor-pointer rounded-2xl font-bold py-2 hidden md:block'>Explore Premium</Button>
                 <Button variant={"destructive"} className='bg-black  active:scale-105 cursor-pointer text-gray-400 hover:text-white font-bold'>
                     <HiDownload className='cursor-pointer' fill='white' />
 
@@ -43,7 +43,7 @@ export const Fheader = () => {
 
         </div>
     )
-}
+};
 
 export const DHeader = () => {
     const [img1url, setimgurl] = React.useState<string>("")

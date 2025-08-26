@@ -58,6 +58,9 @@ export class BannerSong {
     type: string
 
     @Column()
+    cover: string
+
+    @Column()
     singer: string
 
     @Column({ nullable: true })
@@ -75,7 +78,7 @@ export class Playlist {
     name: string;
 
     @Column({ length: 255 })
-    url : string;
+    url: string;
 
     @Column({ length: 200 })
     subtitle: string;
@@ -83,7 +86,7 @@ export class Playlist {
     @Column({ length: 200 })
     image_url: string;
 
-    @Column({length : 50})
+    @Column({ length: 50 })
     section: string;
 
     @OneToMany(() => Tracks, (track) => track.playlist)

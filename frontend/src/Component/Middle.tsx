@@ -18,10 +18,10 @@ interface Props {
 
 
 
-export const Middle: React.FC<Props> = ({ Image1, Image2, Heading , Type , Singer }) => {
+export const Middle: React.FC<Props> = ({ Image1, Image2, Heading, Type, Singer }) => {
 
     const videoref = useRef<HTMLVideoElement>(null)
-  
+
     const [show1, setshow1] = useState(false);
 
 

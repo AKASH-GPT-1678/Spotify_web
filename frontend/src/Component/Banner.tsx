@@ -7,14 +7,16 @@ import { Middle } from './Middle'
 interface Song {
     id: number;
     publicurl: string;
+    cover: string
     name: string;
     type: string;
     singer: string;
     minidescrip: string;
+
 }
 
 export const Banner = () => {
-    const {fulll , checkfull } = useFullContext();
+    const { fulll, checkfull } = useFullContext();
 
     const [data, setData] = useState<Song[]>([]);
     const endpoint = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT;
@@ -30,6 +32,7 @@ export const Banner = () => {
             }
 
             const result = await response.json();
+
             setData(result.data);
             console.log(result.data);
             return result;
@@ -42,13 +45,13 @@ export const Banner = () => {
         fetchall();
     }, []);
 
-    
+
     return (
         <div className={`${fulll ? "grid grid-cols-3 w-full ml-auto" : "grid grid-cols-4"} gap-0 bg-gray-950 mt-2`}>
 
 
             {[...data].map((dat, i) => (
-                <Middle key={i} Image1={dat.publicurl} Image2={"https://storage.googleapis.com/smart_city_123/Banner/fanaa.jpg"} Heading={dat.name} Type={dat.type} Singer={dat.singer} />
+                <Middle key={i} Image1={dat.publicurl} Image2={dat.cover} Heading={dat.name} Type={dat.type} Singer={dat.singer} />
             ))}
             <button className='hidden' onClick={() => checkfull(true)}></button>
 
