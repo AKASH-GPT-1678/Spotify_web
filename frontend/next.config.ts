@@ -30,6 +30,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "charts-images.scdn.co"
+      },
+      {
+        protocol: "https",
+        hostname: "meatbuckett.s3.eu-north-1.amazonaws.com"
       }
 
     ],

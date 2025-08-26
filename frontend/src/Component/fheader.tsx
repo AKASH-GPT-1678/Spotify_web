@@ -24,20 +24,20 @@ export const Fheader = () => {
             </div>
             <div className=' w-fit h-[50px] flex flex-row gap-5 items-center '>
                 <Button variant={"secondary"} className='bg-white text-black active:scale-105 cursor-pointer rounded-2xl font-bold py-2 hidden md:block'>Explore Premium</Button>
-                <Button variant={"destructive"} className='bg-black  active:scale-105 cursor-pointer text-gray-400 hover:text-white font-bold'>
-                    <HiDownload className='cursor-pointer' fill='white' />
+                <Button variant={"destructive"} className='bg-black  active:scale-105 cursor-pointer text-gray-400 hover:text-white font-bold  '>
+                    <HiDownload className='cursor-pointer ' fill='white' />
 
 
                     Install App</Button>
                 <Bell className='cursor-pointer' fill='white' />
-                <div className='bg-amber-600 rounded-full w-[40px] h-[40px] cursor-pointer'>
+                <div className='bg-amber-600 rounded-full w-[40px] h-[40px] cursor-pointer hidden md:inline'>
                     <div className='flex items-center justify-center mt-2'>{text}</div>
 
                 </div>
 
             </div>
 
-
+    
 
 
 

@@ -32,6 +32,7 @@ export const Banner = () => {
             }
 
             const result = await response.json();
+            console.log("my response", result);
 
             setData(result.data);
             console.log(result.data);

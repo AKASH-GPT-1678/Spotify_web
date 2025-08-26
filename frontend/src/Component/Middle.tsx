@@ -70,7 +70,7 @@ export const Middle: React.FC<Props> = ({ Image1, Image2, Heading, Type, Singer 
 
 
                     > <div className="absolute bottom-6 left-4 flex flex-row justify-between w-[350px] z-20 animate-slide-up  transition-all ease-in transform translate-y-0 opacity-100 duration-0 fade-in">
-                            <div className=" border-2 border-black h-[40px] p-2 text-white mt-5 rounded-2xl cursor-pointer bg-zinc-900  "><h2 className="border-white">Preoview</h2></div>
+                            <div className=" border-2 border-black h-[40px] p-2 text-white mt-5 rounded-2xl cursor-pointer bg-zinc-900  "><h2 className="border-white">Preview</h2></div>
                             <div className="  border-black  flex flex-row justify-items-center gap-4  justify-evenly text-white ">
                                 <BsThreeDots size={30} className="mt-6 cursor-pointer" />
                                 <CiCirclePlus size={30} className="mt-6 cursor-pointer" />
